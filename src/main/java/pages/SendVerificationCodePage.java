@@ -32,6 +32,10 @@ public class SendVerificationCodePage {
 	//	driver.findElement(email).click();
 		driver.findElement(submitButton).click();
 	}
+}
+
+
+
 
 	/*
 	 public void payTo(String paytype) {
@@ -47,4 +51,4 @@ public class SendVerificationCodePage {
 		 driver.findElement(ach).click();
 	 }
 	 */
-}
+ 
