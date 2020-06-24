@@ -12,11 +12,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import pages.EnterVerificationCodePage;
 import pages.LoginPage;
+import pages.SaveBrowserPage;
 import pages.SendVerificationCodePage;
  
 public class Invoice_Status_Verification {
@@ -69,9 +71,12 @@ public class Invoice_Status_Verification {
 			EnterVerificationCodePage evc =new EnterVerificationCodePage(driver);
 			evc.enterVerificationCode(con, stmt, username);
 		}
-
-		
-			 
+		@And("^a user select ([^\"]*)for SB option$")
+		public void a_user_select_for_SB_option(String saveOption) {
+			SaveBrowserPage sb = new SaveBrowserPage(driver);
+			sb.selectOptions(saveOption);
+		}
+		 
 }
 
 
