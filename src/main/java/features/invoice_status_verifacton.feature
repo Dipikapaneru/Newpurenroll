@@ -8,7 +8,12 @@ Then a user verify <title> of the web page
 Then a user enters verification code for <username>
 And a user select <codeoption> for SB option
 Examples:
-|username | password| code_option | title|codeoption|
-|hellofromcts@gmail.com | Cts@2020| email| ENTER VERIFICATION CODE|yes|
+|username 							| password| code_option | title									 |codeoption|
+|hellofromcts@gmail.com | Cts@2020| email				| ENTER VERIFICATION CODE|no|
 
+@admin
+Scenario: Display of Blacklisted bank accounts
+Given a user with valid admin role sign in into Corenroll Admin
+When a user navigates to Blacklist account page
+Then a user is displayed with all blacklisted accounts
  

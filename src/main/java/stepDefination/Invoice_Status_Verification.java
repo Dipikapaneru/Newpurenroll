@@ -28,11 +28,11 @@ public class Invoice_Status_Verification {
 	 
 	@Before
 	public void setVariable() throws ClassNotFoundException, SQLException {
-		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver-2");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\14193\\git\\Newpurenroll\\src\\main\\java\\drivers\\chromedriver.exe");
 		driver= new ChromeDriver();
 		System.out.println("BEFORE METHOD");
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		con = DriverManager.getConnection("jdbc:mysql://3.12.28.169:3306/ssoapp", "qa-user", "ssouser@123!");
+		con = DriverManager.getConnection("jdbc:mysql://3.21.123.67:3306/ssoapp", "root", "jNSd<76@");
 		stmt = con.createStatement();
 	}
 	//@After
@@ -40,7 +40,7 @@ public class Invoice_Status_Verification {
 			//driver.quit();
 		}
 		@Given("^a user is on purenroll login page$")
-		public void a_usere_is_on_purenroll_login_page() throws Throwable {
+		public void a_user_is_on_purenroll_login_page() throws Throwable {
 			driver.get("http://qa-www.purenroll.com/home");
 		 	 driver.manage().window().maximize();
 		 	
@@ -77,6 +77,24 @@ public class Invoice_Status_Verification {
 			sb.selectOptions(saveOption);
 		}
 		 
+		@Given("^a user with valid admin role sign in into Corenroll Admin$")
+		public void a_user_with_valid_admin_role_sign_in_into_Corenroll_Admin() throws Throwable{
+			 a_user_is_on_purenroll_login_page();
+			 a_user_enter_valid_and("hellofromcts@gmail.com", "Cts@2020");
+			 a_user_selects_for_OTP_option("email");
+			 a_user_verify_of_the_web_page("ENTER VERIFICATION CODE");
+			 a_user_enters_verification_code_for("hellofromcts@gmail.com" );
+			 a_user_select_for_SB_option("no");
+		}
+
+		@When("^a user navigates to Blacklist account page$")
+		public void a_user_navigates_to_Blacklist_account_page() {
+			driver.navigate().to("http://qa-www.purenroll.com/BlackList");
+		}
+
+		@Then("^a user is displayed with all blacklisted accounts$")
+		public void a_user_is_displayed_with_all_blacklisted_accounts(){
+		}
 }
 
 
