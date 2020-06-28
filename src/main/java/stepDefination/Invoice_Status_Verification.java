@@ -16,6 +16,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import filereader.ConfigFileReader;
 import pages.EnterVerificationCodePage;
 import pages.LoginPage;
 import pages.SaveBrowserPage;
@@ -25,10 +26,14 @@ public class Invoice_Status_Verification {
 	WebDriver driver;
 	Connection con ;
 	Statement stmt;
+	ConfigFileReader configuration;
 	 
 	@Before
 	public void setVariable() throws ClassNotFoundException, SQLException {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\14193\\git\\Newpurenroll\\src\\main\\java\\drivers\\chromedriver.exe");
+		 configuration = new ConfigFileReader();
+		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getBrowser());
+		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getUrl());
 		driver= new ChromeDriver();
 		System.out.println("BEFORE METHOD");
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -94,6 +99,7 @@ public class Invoice_Status_Verification {
 
 		@Then("^a user is displayed with all blacklisted accounts$")
 		public void a_user_is_displayed_with_all_blacklisted_accounts(){
+			
 		}
 }
 
