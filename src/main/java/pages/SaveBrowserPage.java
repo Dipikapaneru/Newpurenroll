@@ -29,7 +29,7 @@ WebDriver driver;
 				option.click();
 			}
 		}
-		//driver.findElement(submitButton).click();
+		driver.findElement(submitButton).click();
 	}
  
  	
