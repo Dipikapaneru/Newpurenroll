@@ -1,10 +1,12 @@
 package filereader;
 
-import java.util.Properties;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Properties;
+
+import enums.DriverType;
 
 public class ConfigFileReader {
 	private Properties properties;
@@ -33,13 +35,29 @@ public class ConfigFileReader {
 			}
 	}
 
-	public String getBrowser() {
+	public DriverType getBrowser() {
 		String browserName = properties.getProperty("browser");
-		return browserName;
+		if(browserName == null || browserName.equalsIgnoreCase("chrome")) {
+			return DriverType.CHROME;
+		}else if(browserName.equalsIgnoreCase("firefox")) {
+			return DriverType.FIREFOX;
+		}else if(browserName.equalsIgnoreCase("ie") || browserName.equalsIgnoreCase("internetexplorer")) {
+			return DriverType.INTERNETEXPLORER;
+		}else {
+			throw new RuntimeException("Browser not found based of Key value in Configuration.Properties file: "+browserName);
+		}
 	}
 	
 	public String getUrl() {
 		String url = properties.getProperty("url");
 		return url;
+	}
+	
+	public String getEnvironment() {
+		return properties.getProperty("environment");
+	}
+	
+	public String getDriverPath() {
+		return properties.getProperty("driverPath");
 	}
 }
