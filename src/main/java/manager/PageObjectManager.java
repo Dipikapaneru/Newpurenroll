@@ -26,6 +26,7 @@ public class PageObjectManager {
 		return (navigationHelper == null) ? navigationHelper = new NavigationHelper(driver) : navigationHelper;
 	}
 	
+	
 	public LoginPage getLoginPage() {
 		return (loginPage == null) ? loginPage = new LoginPage(driver) : loginPage;
 	}
