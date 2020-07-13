@@ -30,7 +30,7 @@ public class Invoice_Status_Verification {
 	 
 	@Before
 	public void setVariable() throws ClassNotFoundException, SQLException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\14193\\git\\Newpurenroll\\src\\main\\java\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver-2");
 		 configuration = new ConfigFileReader();
 		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getBrowser());
 		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getUrl());

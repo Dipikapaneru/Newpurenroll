@@ -55,6 +55,7 @@ public class ConfigFileReader {
 	
 	public String getEnvironment() {
 		return properties.getProperty("environment");
+		
 	}
 	
 	public String getDriverPath() {
