@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import enums.DriverType;
+import enums.EnvironmentType;
 
 public class ConfigFileReader {
 	private Properties properties;
@@ -53,9 +54,19 @@ public class ConfigFileReader {
 		return url;
 	}
 	
-	public String getEnvironment() {
+	public String getenvironment() {
 		return properties.getProperty("environment");
 		
+	}
+	public EnvironmentType getEnvironment() {
+		String environmentName = properties.getProperty("environment");
+		if(environmentName == null || environmentName.equalsIgnoreCase("local")) {
+			return EnvironmentType.LOCAL;
+		}else if (environmentName.equalsIgnoreCase("remote")) {
+			return EnvironmentType.REMOTE;
+		}else {
+			throw new RuntimeException("Environment unrecognized" +environmentName);
+		}
 	}
 	
 	public String getDriverPath() {
