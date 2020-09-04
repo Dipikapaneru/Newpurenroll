@@ -54,6 +54,10 @@ public class ConfigFileReader {
 		return url;
 	}
 	
+	public String getenvironment() {
+		return properties.getProperty("environment");
+		
+	}
 	public EnvironmentType getEnvironment() {
 		String environmentName = properties.getProperty("environment");
 		if(environmentName == null || environmentName.equalsIgnoreCase("local")) {
