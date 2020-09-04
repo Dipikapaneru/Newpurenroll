@@ -16,19 +16,27 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import filereader.ConfigFileReader;
 import pages.EnterVerificationCodePage;
 import pages.LoginPage;
 import pages.SaveBrowserPage;
 import pages.SendVerificationCodePage;
  
 public class Invoice_Status_Verification {
+	/*
 	WebDriver driver;
 	Connection con ;
 	Statement stmt;
+	ConfigFileReader configuration;
+	
 	 
+	
 	@Before
 	public void setVariable() throws ClassNotFoundException, SQLException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\14193\\git\\Newpurenroll\\src\\main\\java\\drivers\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src/main/java/drivers/chromedriver-2");
+		 configuration = new ConfigFileReader();
+		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getBrowser());
+		System.out.println("THIS VALUE IS RETERIVED FROM FILE: "+configuration.getUrl());
 		driver= new ChromeDriver();
 		System.out.println("BEFORE METHOD");
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -45,37 +53,13 @@ public class Invoice_Status_Verification {
 		 	 driver.manage().window().maximize();
 		 	
 		}
-		@When("^a user enter valid ([^\"]*) and ([^\"]*)$")
-		public void a_user_enter_valid_and(String username, String password) throws Throwable {
-			LoginPage loginPage = new LoginPage(driver);
-			loginPage.logindetail(username, password);
-		}
+	
 		
 		
 		
-		@Then("^a user selects ([^\"]*) for OTP option$")
-		public void a_user_selects_for_OTP_option(String codeOption) throws Throwable {
-			SendVerificationCodePage svc = new SendVerificationCodePage(driver);
-			svc.selectOtpOption(codeOption);
-		}
 		
-		@Then("^a user verify ([^\"]*) of the web page$")
-		public void a_user_verify_of_the_web_page(String title) throws Throwable {
-			EnterVerificationCodePage evc =new EnterVerificationCodePage(driver);
-			String actualTitle = evc.verifytitle();
-			Assert.assertEquals(actualTitle, title);
-		}
 		
-		@Then("^a user enters verification code for ([^\"]*)$")
-		public void a_user_enters_verification_code_for(String username) throws Throwable {
-			EnterVerificationCodePage evc =new EnterVerificationCodePage(driver);
-			evc.enterVerificationCode(con, stmt, username);
-		}
-		@And("^a user select ([^\"]*)for SB option$")
-		public void a_user_select_for_SB_option(String saveOption) {
-			SaveBrowserPage sb = new SaveBrowserPage(driver);
-			sb.selectOptions(saveOption);
-		}
+		
 		 
 		@Given("^a user with valid admin role sign in into Corenroll Admin$")
 		public void a_user_with_valid_admin_role_sign_in_into_Corenroll_Admin() throws Throwable{
@@ -87,14 +71,8 @@ public class Invoice_Status_Verification {
 			 a_user_select_for_SB_option("no");
 		}
 
-		@When("^a user navigates to Blacklist account page$")
-		public void a_user_navigates_to_Blacklist_account_page() {
-			driver.navigate().to("http://qa-www.purenroll.com/BlackList");
-		}
-
-		@Then("^a user is displayed with all blacklisted accounts$")
-		public void a_user_is_displayed_with_all_blacklisted_accounts(){
-		}
+		
+		*/
 }
 
 

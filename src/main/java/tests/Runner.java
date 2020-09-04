@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/main/java/features",
 glue= {"stepDefination"},
-tags= {"@admin"})
+tags= {"@configuration"})
 public class Runner {
 
 }
