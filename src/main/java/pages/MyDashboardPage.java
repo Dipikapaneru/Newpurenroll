@@ -17,4 +17,6 @@ public class MyDashboardPage {
 	
 	By individualInvoices = By.xpath("//span[contains(text(),'Individual Invoices')]");
 	
+	By emailConfigurationLink = By.xpath("//span[contains(text(),'Email Settings')]");
+	
 }
