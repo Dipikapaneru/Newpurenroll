@@ -21,6 +21,9 @@ public void navigate_to_Page(String page) throws InterruptedException {
 		case "SINGLE_INVOICE":
 			driver.navigate().to("http://qa-www.purenroll.com/SingleInvoice");
 			break;
+		case "EMAIL_TEMPLATE":
+			driver.navigate().to("https://qa-www.purenroll.com/EmailTemplates");
+			break;
 		default:
 			driver.get("http://qa-www.purenroll.com");
 			break;
