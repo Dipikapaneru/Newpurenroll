@@ -4,11 +4,15 @@ import org.openqa.selenium.WebDriver;
 
 import hooks.NavigationHelper;
 import pages.BlacklistedValidationPage;
+ 
+import pages.EmailManagerpage;
+ 
 import pages.EnterVerificationCodePage;
 import pages.LoginPage;
 import pages.MyDashboardPage;
 import pages.SaveBrowserPage;
 import pages.SendVerificationCodePage;
+import stepDefination.PayButtonOnEmailManagerSteps;
 
 public class PageObjectManager {
 	private WebDriver driver;
@@ -18,7 +22,9 @@ public class PageObjectManager {
 	private SaveBrowserPage saveBrowserPage;
 	private MyDashboardPage myDashboardPage;
 	private NavigationHelper navigationHelper;
+
 	private BlacklistedValidationPage blacklistedValidationPage;
+	private EmailManagerpage emailManagerpage;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -50,8 +56,15 @@ public class PageObjectManager {
 		return (myDashboardPage == null) ? myDashboardPage = new MyDashboardPage(driver) : myDashboardPage;
 		
 	}
+
  
 	public BlacklistedValidationPage getBlacklistedValidationPage() {
 		return (blacklistedValidationPage== null) ? blacklistedValidationPage = new BlacklistedValidationPage(driver) :blacklistedValidationPage;
+	
+	}
+	public EmailManagerpage getEmailManagerpage(){
+		 
+		return (emailManagerpage == null) ? emailManagerpage = new EmailManagerpage(driver) : emailManagerpage;
+	
 	}
 }
