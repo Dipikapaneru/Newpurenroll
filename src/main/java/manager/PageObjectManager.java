@@ -3,6 +3,7 @@ package manager;
 import org.openqa.selenium.WebDriver;
 
 import hooks.NavigationHelper;
+import pages.BlacklistedValidationPage;
 import pages.EnterVerificationCodePage;
 import pages.LoginPage;
 import pages.MyDashboardPage;
@@ -17,6 +18,7 @@ public class PageObjectManager {
 	private SaveBrowserPage saveBrowserPage;
 	private MyDashboardPage myDashboardPage;
 	private NavigationHelper navigationHelper;
+	private BlacklistedValidationPage blacklistedValidationPage;
 	
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -49,5 +51,7 @@ public class PageObjectManager {
 		
 	}
  
-	
+	public BlacklistedValidationPage getBlacklistedValidationPage() {
+		return (blacklistedValidationPage== null) ? blacklistedValidationPage = new BlacklistedValidationPage(driver) :blacklistedValidationPage;
+	}
 }

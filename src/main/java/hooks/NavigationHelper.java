@@ -10,19 +10,19 @@ public class NavigationHelper {
 
 	public void navigate_to_LoginPage() throws InterruptedException {
 		
-		driver.get("http://qa-www.purenroll.com");
+		driver.get("https://qa-www.purenroll.com");
 	}
 	
 public void navigate_to_Page(String page) throws InterruptedException {
 		switch(page) {
 		case "BLACKLIST_ACCOUNT":
-			driver.navigate().to("http://qa-www.purenroll.com/Blacklist");
+			driver.navigate().to("https://qa-www.purenroll.com/Blacklist");
 			break;
 		case "SINGLE_INVOICE":
-			driver.navigate().to("http://qa-www.purenroll.com/SingleInvoice");
+			driver.navigate().to("https://qa-www.purenroll.com/SingleInvoice");
 			break;
 		default:
-			driver.get("http://qa-www.purenroll.com");
+			driver.get("https://qa-www.purenroll.com");
 			break;
 		}
 		

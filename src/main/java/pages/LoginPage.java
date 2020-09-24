@@ -15,7 +15,7 @@ public class LoginPage {
 	By loginButton = By.cssSelector(".ce-btn-login-submit");
 	
 	public void logindetail(String username, String password) throws InterruptedException{
-		Thread.sleep(500);
+		Thread.sleep(1000);
 		driver.findElement(usernameField).sendKeys(username);
 		driver.findElement(passwordField).sendKeys(password);
 		driver.findElement(loginButton).click();
